@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>WELCOME TO BREAKING BAD</h1>
+   
     <Carousel />
 <b-container>
-  jhgukkug
+  
 </b-container>
     </div>
 </template>
