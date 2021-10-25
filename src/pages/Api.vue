@@ -14,12 +14,12 @@
         :buttontitle="'mav'"
       />
 
-    <div v-for="(beer, index) in beers" :key="index">
+    <div v-for="(api, index) in apis" :key="index">
       <!-- Dependency Injection of single beer inside the card component -->
       <ApiTest
-        :ApiTitle="beer.name"
-        :description="beer.description"
-        :img="beer.image_url"
+        :ApiTitle="api.name"
+        :description="api.description"
+        :img="api.image_url"
         :buttontitle="'ciao'"
       />
     </div>
@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      beers: [],
+      apis: [],
     };
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
 
       console.log(result)
 
-      this.beers = result.data
+      this.apis = result.data
     },
   },
 };
