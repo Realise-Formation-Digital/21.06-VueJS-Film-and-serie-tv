@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+
+
 Vue.use(VueRouter)
 
 //Pages
@@ -7,7 +10,6 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import FilmList from "../pages/FilmList";
 import AboutUs from "../pages/AboutUs";
-
 
 const routes = [
     { path: '/', component: Home },
