@@ -1,5 +1,7 @@
 <template>
-  <div>Foot</div>
+    <div class="container-fluid text-center bg-light p-5 bottom">
+    <p>Footer</p>
+</div>
 </template>
 
 <script>
