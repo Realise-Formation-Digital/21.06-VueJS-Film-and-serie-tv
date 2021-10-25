@@ -7,6 +7,8 @@
   >
     <b-card-text> {{ description }}</b-card-text>
     <b-card-text> {{ season }} </b-card-text>
+    <b-card-text> {{ episodes }} </b-card-text>
+    
 
     <b-button href="#" variant="primary">{{buttonTitle}}</b-button>
   </b-card>
@@ -28,14 +30,20 @@ export default {
     },
 
     season: {
-      type: String,
-      default: "",
+      type: Number,
+      default: 1,
       required: true,
     },
 
     buttonTitle: {
       type: String,
       default: "",
+      required: true,
+      
+    },
+    episodes: {
+      type: Number,
+      default: 1,
       required: true,
     },
   },
