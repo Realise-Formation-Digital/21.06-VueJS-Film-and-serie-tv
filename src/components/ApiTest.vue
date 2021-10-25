@@ -1,16 +1,18 @@
 <template>
   <b-card
     :title="ApiTitle"
+    :img-src="img"
     tag="article"
     style="max-width: 20rem"
     class="mb-2"
   >
-    <b-card-text> {{ description }}</b-card-text>
-    <b-card-text> {{ season }} </b-card-text>
-    <b-card-text> {{ episodes }} </b-card-text>
-    
+    <b-card-text v-if="description"> {{ description }}</b-card-text>
+    <b-card-text v-if="season"> {{ season }} </b-card-text>
+    <b-card-text v-if="episodes"> {{ episodes }} </b-card-text>
+    <b-card-text v-if="name"> {{ name }} </b-card-text>
+    <b-card-text v-if="nickname"> {{ nickname }} </b-card-text>
 
-    <b-button href="#" variant="primary">{{buttonTitle}}</b-button>
+    <b-button href="#" variant="primary">{{ buttonTitle }}</b-button>
   </b-card>
 </template>
 
@@ -20,31 +22,38 @@ export default {
   props: {
     ApiTitle: {
       type: String,
-      required: true,
-      default: "",
+      required: false,
     },
     description: {
       type: String,
-      default: "",
-      required: true,
+      required: false,
     },
 
     season: {
       type: Number,
-      default: 1,
-      required: true,
+      required: false,
     },
 
     buttonTitle: {
       type: String,
       default: "",
       required: true,
-      
     },
     episodes: {
       type: Number,
-      default: 1,
-      required: true,
+      required: false,
+    },
+    name: {
+      type: String,
+      required: false,
+    },
+    nickname: {
+      type: String,
+      required: false,
+    },
+    img: {
+      type: String,
+      required: false,
     },
   },
 };
