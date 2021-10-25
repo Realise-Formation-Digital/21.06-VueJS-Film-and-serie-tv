@@ -8,6 +8,7 @@ import Contact from "../pages/Contact";
 import FilmList from "../pages/FilmList";
 import AboutUs from "../pages/AboutUs";
 
+
 const routes = [
     { path: '/', component: Home },
     { path: '/contact', component: Contact },
