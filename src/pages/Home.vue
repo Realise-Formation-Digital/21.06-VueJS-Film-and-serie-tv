@@ -1,6 +1,9 @@
 <template>
   <div>
     <Carousel />
+    <div class="text-center">
+      <h1>Acteurs principaux<b-badge></b-badge></h1>
+    </div>
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
