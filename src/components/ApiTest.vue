@@ -1,16 +1,14 @@
 <template>
   <b-card
     :title="ApiTitle"
-    :img-src="img"
-    img-alt="Image"
-    img-top
     tag="article"
     style="max-width: 20rem"
     class="mb-2"
   >
-    <b-card-text> {{ description }} {{ img }} </b-card-text>
+    <b-card-text> {{ description }}</b-card-text>
+    <b-card-text> {{ season }} </b-card-text>
 
-    <b-button href="#" variant="primary">{{buttontitle}}</b-button>
+    <b-button href="#" variant="primary">{{buttonTitle}}</b-button>
   </b-card>
 </template>
 
@@ -29,13 +27,13 @@ export default {
       required: true,
     },
 
-    img: {
+    season: {
       type: String,
       default: "",
       required: true,
     },
 
-    buttontitle: {
+    buttonTitle: {
       type: String,
       default: "",
       required: true,
