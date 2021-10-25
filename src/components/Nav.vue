@@ -1,8 +1,13 @@
 <template>
   <div>
-    <b-navbar type="dark" variant="dark">
+    <b-navbar fixed="top" type="dark" variant="dark">
     <b-navbar-nav>
-      <b-nav-item href="#">Home</b-nav-item>
+      <b-nav-item ><router-link to="/">Home</router-link></b-nav-item>
+      <b-nav-item ><router-link to="/films-list">film-list</router-link></b-nav-item>
+      <b-nav-item ><router-link to="/aboutus">about-us</router-link></b-nav-item>
+      <b-nav-item ><router-link to="/contact">contact</router-link></b-nav-item>
+
+
 
       <!-- Navbar dropdowns -->
       <b-nav-item-dropdown text="Lang" right>
@@ -29,5 +34,6 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>
