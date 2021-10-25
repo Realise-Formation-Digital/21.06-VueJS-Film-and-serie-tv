@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 id="title">À PROPOS DE NOUS</h1>
+    <div  id="debout">
     <br><br>
     <h1 class="sous-title">Notre philosophie</h1>
     <br>
@@ -45,6 +46,7 @@
     <br>
     <article class="articles">En cas de questions et de demandes, nos interlocuteurs se feront un plaisir de vous aider.</article>
     <br>
+    </div>
   </div>
 
 </template>
@@ -72,5 +74,8 @@ export default {
   font-size: xx-large;
   font-family: 'Dancing Script', cursive;
 }
-
+#debout{
+  margin-left: 5%;
+  margin-right: 5%;
+}
 </style>
