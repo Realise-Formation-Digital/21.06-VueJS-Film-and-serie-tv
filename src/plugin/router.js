@@ -14,6 +14,7 @@ const routes = [
     { path: '/contact', component: Contact },
     { path: '/films-list', component: FilmList },
     { path: '/about-us', component: AboutUs }
+    
 ]
 
 const router = new VueRouter({
