@@ -6,6 +6,7 @@
       <b-nav-item ><router-link to="/films-list">film-list</router-link></b-nav-item>
       <b-nav-item ><router-link to="/aboutus">about-us</router-link></b-nav-item>
       <b-nav-item ><router-link to="/contact">contact</router-link></b-nav-item>
+      <b-nav-item ><router-link to="/api">api</router-link></b-nav-item>
 
 
 

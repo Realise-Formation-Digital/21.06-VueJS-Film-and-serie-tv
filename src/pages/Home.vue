@@ -1,11 +1,10 @@
 <template>
-  <div>
-   
+ 
+   <div>
     <Carousel />
-<b-container>
-  
-</b-container>
-    </div>
+    
+</div>
+ 
 </template>
 
 <script>
