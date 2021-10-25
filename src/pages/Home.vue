@@ -1,7 +1,9 @@
 <template>
-
   <div>
     <Carousel />
+    <div class="text-center">
+      <h1>Acteurs principaux<b-badge></b-badge></h1>
+    </div>
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
@@ -106,19 +108,77 @@
         </b-col>
       </b-row>
     </b-container>
+    <div>
+      
+      
+      <div>
+        <b-container class="text-center">
+          <!-- Butto that trigger the events that get the beer list-->
+          <b-btn @click="getApi()">Plus d'Acteurs </b-btn>
+        </b-container>
+      </div>
+      <!-- Loop over Breaking Bad -->
+
+      <b-container class="text-center bv-example-row">
+        <b-row>
+          <div v-for="(api, index) in apis" :key="index">
+            <!-- Dependency Injection of single beer inside the card component -->
+            <!-- <ApiHome 
+            :Title=""/> -->
+
+            <b-col cols="3" class="m-1">
+              <ApiTest
+                :name="api.name"
+                :nickname="api.nickname"
+                :img="api.img"
+                :buttonTitle="'More Information'"
+              />
+            </b-col>
+          </div>
+        </b-row>
+      </b-container>
+    </div>
   </div>
 </template>
 
 <script>
 import Carousel from "../components/Carousel.vue";
-
+import axios from "axios";
+import ApiTest from "../components/ApiTest.vue";
+ 
 export default {
   name: "Home",
   components: {
     Carousel,
+    ApiTest,
+  },
+  data() {
+    return {
+      apis: [],
+    };
+  },
+  methods: {
+    handleEvent(message) {
+      console.log("Recu", message);
+    },
+    async getApi() {
+      console.log("called");
+
+      // Get the answer from the server (Punk Api) and stock it in result
+      const result = await axios.get(
+        "https://www.breakingbadapi.com/api/characters"
+      );
+      // Stock the result in dynamic variable that connect HTML and JS
+      //this.apis = result.data;
+
+      console.log(result);
+
+      this.apis = result.data;
+    },
   },
 };
-</script>
+
+    </script>
 
 
 <style scoped>

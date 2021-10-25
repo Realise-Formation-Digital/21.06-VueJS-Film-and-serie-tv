@@ -19,6 +19,7 @@ const routes = [
     { path: '/about-us', component: AboutUs },
     { path: '/api', component: Api },
     
+   
 ]
 
 const router = new VueRouter({
