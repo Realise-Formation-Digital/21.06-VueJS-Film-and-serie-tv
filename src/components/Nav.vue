@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar type="dark" variant="dark">
+    <b-navbar fixed="top" type="dark" variant="dark">
     <b-navbar-nav>
       <b-nav-item ><router-link to="/">Home</router-link></b-nav-item>
       <b-nav-item ><router-link to="/films-list">film-list</router-link></b-nav-item>
@@ -34,5 +34,6 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>
