@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar type="dark" variant="dark">
+    <b-navbar fixed="top" type="dark" variant="dark">
     <b-navbar-nav>
       <b-nav-item href="#">Home</b-nav-item>
 
@@ -29,5 +29,6 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>
