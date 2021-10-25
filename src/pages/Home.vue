@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <Carousel />
     <div class="text-center">
