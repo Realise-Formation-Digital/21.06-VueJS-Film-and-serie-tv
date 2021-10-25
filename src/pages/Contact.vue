@@ -14,14 +14,7 @@
           placeholder="Enter email"
           required
 
-         v-validate="{ required: true, min: 3 }"
-          :state="validateState('input-1')"
-          aria-describedby="input-1-live-feedback"
-          data-vv-as="Email"
-
-
         ></b-form-input>
-        <b-form-invalid-feedback id="input-1-live-feedback">{{ veeErrors.first('input-1') }}</b-form-invalid-feedback>
       </b-form-group>
       </b-form>
 

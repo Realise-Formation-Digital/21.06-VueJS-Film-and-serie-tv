@@ -59,7 +59,6 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
 #title{
   background-color: lightgray;
   color: white;
