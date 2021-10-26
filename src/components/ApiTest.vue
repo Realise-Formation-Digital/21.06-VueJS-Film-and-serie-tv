@@ -4,12 +4,16 @@
     tag="article"
     class="mb-2"
   >
-    <b-card-img :src="img" height="350" class="card-img-top"/>
+    <b-card-img v-if="img"  :src="img" height="350" class="card-img-top"/>
     <b-card-text v-if="description"> {{ description }}</b-card-text>
     <b-card-text v-if="season"> {{ season }} </b-card-text>
     <b-card-text v-if="episodes"> {{ episodes }} </b-card-text>
     <b-card-text v-if="name"> {{ name }} </b-card-text>
     <b-card-text v-if="nickname"> {{ nickname }} </b-card-text>
+    <b-card-text v-if="air_date"> {{ air_date }} </b-card-text>
+    <b-card-text v-if="characters"> {{ characters }} </b-card-text>
+        
+
 
     <b-button @click="selectId()" variant="primary">{{ buttonTitle }}</b-button>
   </b-card>
@@ -53,6 +57,14 @@ export default {
       required: false,
     },
     img: {
+      type: String,
+      required: false,
+    },
+    air_date: {
+      type: String,
+      required: false,
+    },
+    characters: {
       type: String,
       required: false,
     },
