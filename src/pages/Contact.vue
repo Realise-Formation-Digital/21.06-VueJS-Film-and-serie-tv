@@ -82,20 +82,6 @@
               </b-form-group>
             </ValidationProvider>
 
-            
-
-            <b-form-group id="input-group-4" v-slot="{ ariaDescribedby }">
-              <b-form-checkbox-group
-                v-model="form.checked"
-                id="checkboxes-4"
-                :aria-describedby="ariaDescribedby"
-                unchecked-value="not_accepted"
-              >
-                <b-form-checkbox value="me">Check me out</b-form-checkbox>
-                <b-form-checkbox value="that">Check that out</b-form-checkbox>
-              </b-form-checkbox-group>
-            </b-form-group>
-
             <b-button
               @click="handleSubmit()"
               type="submit v-model "
@@ -144,9 +130,17 @@ export default {
         message: null,
         checked: [],
       },
+      
     };
   },
-
+   watch: {
+    email(value){
+      // binding this to the data value in the email input
+      this.email = value;
+      this.validateEmail(value);
+    }
+  },
+  
   methods: {
     async onSubmit() {
       alert(JSON.stringify(this.form));
@@ -155,11 +149,9 @@ export default {
         email: this.form.email,
         messages: this.form.messages,
         mobile: this.form.mobile,
-
-
       });
+      
     },
-    
     
     onReset() {
       // Reset our form values
@@ -171,6 +163,7 @@ export default {
       // Trick to reset/clear native browser form validation state
     },
   },
+  
 };
 </script>
 
