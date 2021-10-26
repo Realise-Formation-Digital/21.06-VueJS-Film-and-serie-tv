@@ -10,10 +10,10 @@
     <!-- Loop over beers -->
 
     <b-container class="text-center bv-example-row">
-       <b-row>
-      <div v-for="(api, index) in apis" :key="index">
-        <!-- Dependency Injection of single beer inside the card component -->
-       
+      <b-row>
+        <div v-for="(api, index) in apis" :key="index">
+          <!-- Dependency Injection of single beer inside the card component -->
+
           <b-col cols="3" class="m-1">
             <ApiTest
               :ApiTitle="api.title"
@@ -21,12 +21,14 @@
               :season="api.season"
               :episodes="api.episode"
               :buttonTitle="'More Information'"
+              :id="api.id"
+              @selectedId="handleSelectedId"
             />
           </b-col>
-        
-      </div>
+        </div>
       </b-row>
     </b-container>
+    <b-modal v-model="modalShow">{{selectedfilm}}</b-modal>
   </div>
 </template>
 
@@ -41,8 +43,11 @@ export default {
   data() {
     return {
       apis: [],
+      modalShow: false,
+      selectedfilm: null,
     };
   },
+
   methods: {
     handleEvent(message) {
       console.log("Recu", message);
@@ -60,6 +65,11 @@ export default {
       console.log(result);
 
       this.apis = result.data;
+    },
+    handleSelectedId(id) {
+      this.selectedfilm = null;
+      this.selectedfilm = this.apis.find((api) => api.id === id);
+      this.modalShow = true;
     },
   },
 };

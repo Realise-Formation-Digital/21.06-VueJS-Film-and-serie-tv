@@ -126,16 +126,19 @@
         <b-row>
             <b-col v-for="(api, index) in apis" :key="index" sm="12" md="4" lg="3">
               <ApiTest
-                  :name="api.name"
-                  :nickname="api.nickname"
-                  :img="api.img"
-                  :buttonTitle="'More Information'"
+                :name="api.name"
+                :nickname="api.nickname"
+                :img="api.img"
+                :buttonTitle="'More Information'"
+                :id="api.id"
+                @selectedId="handleSelectedId"
               />
             </b-col>
           </b-row>
         </b-overlay>
       </b-container>
     </div>
+    <b-modal v-model="modalShow">{{ selectedActeur }}</b-modal>
   </div>
 </template>
 
@@ -153,7 +156,9 @@ export default {
   data() {
     return {
       apis: [],
-      showOverlay: false
+      showOverlay: false,
+      modalShow: false,
+      selectedActeur: null,
     };
   },
   mounted(){
@@ -175,6 +180,11 @@ export default {
 
       this.apis = result.data;
       this.showOverlay = false
+    },
+    handleSelectedId(id) {
+      this.selectedActeur = null;
+      this.selectedActeur = this.apis.find((api) => api.id === id);
+      this.modalShow = true;
     },
   },
 };
