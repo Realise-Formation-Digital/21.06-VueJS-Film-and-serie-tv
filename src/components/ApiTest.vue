@@ -1,11 +1,10 @@
 <template>
   <b-card
     :title="ApiTitle"
-    :img-src="img"
     tag="article"
-    style="max-width: 20rem"
     class="mb-2"
   >
+    <b-card-img :src="img" height="350" class="card-img-top"/>
     <b-card-text v-if="description"> {{ description }}</b-card-text>
     <b-card-text v-if="season"> {{ season }} </b-card-text>
     <b-card-text v-if="episodes"> {{ episodes }} </b-card-text>
@@ -28,12 +27,10 @@ export default {
       type: String,
       required: false,
     },
-
     season: {
       type: Number,
       required: false,
     },
-
     buttonTitle: {
       type: String,
       default: "",
@@ -60,4 +57,9 @@ export default {
 </script>
 
 <style scoped>
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
 </style>
