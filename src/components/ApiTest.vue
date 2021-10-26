@@ -12,7 +12,7 @@
     <b-card-text v-if="name"> {{ name }} </b-card-text>
     <b-card-text v-if="nickname"> {{ nickname }} </b-card-text>
 
-    <b-button href="#" variant="primary">{{ buttonTitle }}</b-button>
+    <b-button @click="selectId()" variant="primary">{{ buttonTitle }}</b-button>
   </b-card>
 </template>
 
@@ -20,6 +20,10 @@
 export default {
   name: "ApiTest",
   props: {
+    id: {
+      type: Number,
+      required: false,
+    },
     ApiTitle: {
       type: String,
       required: false,
@@ -30,7 +34,7 @@ export default {
     },
 
     season: {
-      type: Number,
+      type: String,
       required: false,
     },
 
@@ -40,7 +44,7 @@ export default {
       required: true,
     },
     episodes: {
-      type: Number,
+      type: String,
       required: false,
     },
     name: {
@@ -56,6 +60,12 @@ export default {
       required: false,
     },
   },
+  methods: {
+      selectId() {
+        console.log("Clicked");
+        this.$emit("selectedId", this.id);
+      },
+    },
 };
 </script>
 

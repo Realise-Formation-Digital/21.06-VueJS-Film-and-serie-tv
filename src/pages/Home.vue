@@ -109,8 +109,6 @@
       </b-row>
     </b-container>
     <div>
-      
-      
       <div>
         <b-container class="text-center">
           <!-- Butto that trigger the events that get the beer list-->
@@ -132,12 +130,15 @@
                 :nickname="api.nickname"
                 :img="api.img"
                 :buttonTitle="'More Information'"
+                :id="api.id"
+                @selectedId="handleSelectedId"
               />
             </b-col>
           </div>
         </b-row>
       </b-container>
     </div>
+    <b-modal v-model="modalShow">{{ selectedActeur }}</b-modal>
   </div>
 </template>
 
@@ -145,7 +146,7 @@
 import Carousel from "../components/Carousel.vue";
 import axios from "axios";
 import ApiTest from "../components/ApiTest.vue";
- 
+
 export default {
   name: "Home",
   components: {
@@ -155,6 +156,8 @@ export default {
   data() {
     return {
       apis: [],
+      modalShow: false,
+      selectedActeur: null,
     };
   },
   methods: {
@@ -175,10 +178,14 @@ export default {
 
       this.apis = result.data;
     },
+    handleSelectedId(id) {
+      this.selectedActeur = null;
+      this.selectedActeur = this.apis.find((api) => api.id === id);
+      this.modalShow = true;
+    },
   },
 };
-
-    </script>
+</script>
 
 
 <style scoped>
