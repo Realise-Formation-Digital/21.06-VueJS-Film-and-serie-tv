@@ -2,31 +2,31 @@
   <div>
     <b-card bg-variant="dark" text-variant="white" title="Card Title">
       <div>
-        <b-container class="text-center"> <h1>Breaking Bad</h1> <br> <h5>“Say my name.”</h5></b-container>
+        <b-container class="text-center">
+          <h1>Breaking Bad</h1>
+          <br />
+          <h5>“Say my name.”</h5></b-container
+        >
       </div>
     </b-card>
     <div>
-      <b-card bg-variant="dark" text text-variant="white" >
-        <b-card
-          class="text-center"
-          overlay
-          img-src="images/episode2.jpeg"
-          img-alt="Card Image"
-          text-variant="black"
-          title=" "
-          sub-title=""
-        >
-          <b-card
-            bg-variant="dark"
-            text-variant="white"
-            title="All About Episodes"
-          >
-            <b-card-text>
-              Watch all the additional information about your favorite series
-            </b-card-text>
-          </b-card>
-        </b-card>
+      <b-card
+        class="test"
+        bg-variant="dark"  
+        text-variant="white"
+        align="center">
+      <b-card-body>
+        <b-card-text>
+          <div class="introepisode">
+<h1 align="center">All bout your favorites episodes!</h1>
+<h4 align="center">The additional information for Breaking Bad fans! know everything about your favorite episodes </h4>
+          </div>
+        </b-card-text>
+      </b-card-body>
       </b-card>
+    </div>
+    <div>
+      <h1 align="center">All Episodes</h1>
     </div>
 
     <b-container class="text-center bv-example-row" bg-variant="dark">
@@ -46,7 +46,12 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-modal v-model="modalShow" body-bg-variant="black" cancel-title="NOP" align="center">
+    <b-modal
+      v-model="modalShow"
+      body-bg-variant="black"
+      cancel-title="NOP"
+      align="center"
+    >
       <b-card
         :title="selectedfilm && selectedfilm.title"
         tag="article"
@@ -118,4 +123,21 @@ export default {
 };
 </script>
 <style scoped>
+.test{
+  background: url('/images/breaking-bad.png'); 
+  background-repeat: no-repeat;
+    background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: center; /* Center the image */
+  height: 900px;
+}
+.introepisode{
+  box-shadow:  -1em 0 .8em olive;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  background-color: rgb(43, 42, 42);
+  margin: 19%;
+  padding-block: 5%;
+}
+
 </style>

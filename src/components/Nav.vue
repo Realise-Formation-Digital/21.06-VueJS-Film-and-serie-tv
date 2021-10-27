@@ -8,10 +8,10 @@
         <router-link to="/api">Episodes</router-link>
       </b-nav-item>
       <b-nav-item>
-        <router-link to="/about-us">about-us</router-link>
+        <router-link to="/about-us">About-us</router-link>
       </b-nav-item>
       <b-nav-item>
-        <router-link to="/contact">contact</router-link>
+        <router-link to="/contact">Contact</router-link>
       </b-nav-item>
       
       <!-- Navbar dropdowns -->
