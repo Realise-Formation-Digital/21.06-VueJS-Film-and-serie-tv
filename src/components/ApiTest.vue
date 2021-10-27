@@ -1,5 +1,5 @@
 <template>
-  <b-card
+  <b-card checkbox
     :title="ApiTitle"
     tag="article"
     class="mb-2"

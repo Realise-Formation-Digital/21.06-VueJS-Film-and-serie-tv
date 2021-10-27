@@ -11,6 +11,8 @@
 import Nav from "./components/Nav";
 import Foot from "./components/Foot";
 
+
+
 export default {
   name: 'App',
   components: {
