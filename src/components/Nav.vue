@@ -1,5 +1,5 @@
 <template>
-  <b-navbar fixed="top" type="dark" variant="dark">
+  <b-navbar fixed="top" type="dark" variant="black">
     <b-navbar-nav>
       <b-nav-item>
         <router-link to="/">Home</router-link>

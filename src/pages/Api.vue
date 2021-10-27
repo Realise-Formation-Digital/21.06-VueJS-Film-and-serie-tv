@@ -2,17 +2,13 @@
   <div>
     <b-card bg-variant="dark" text-variant="white" title="Card Title">
       <div>
-        <b-container class="text-center">
-          <h1>Breaking Bad</h1>
-          <br />
-          <h5>“Say my name.”</h5></b-container
-        >
+        <b-container class="text-center"> <h1>Breaking Bad</h1> <br> <h5>“Say my name.”</h5></b-container>
       </div>
     </b-card>
     <div>
       <b-card
         class="test"
-        bg-variant="dark"  
+        bg-variant="dark"
         text-variant="white"
         align="center">
       <b-card-body>
@@ -24,9 +20,6 @@
         </b-card-text>
       </b-card-body>
       </b-card>
-    </div>
-    <div>
-      <h1 align="center">All Episodes</h1>
     </div>
 
     <b-container class="text-center bv-example-row" bg-variant="dark">
@@ -46,12 +39,8 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-modal
-      v-model="modalShow"
-      body-bg-variant="black"
-      cancel-title="NOP"
-      align="center"
-    >
+    <b-modal v-model="modalShow" body-bg-variant="black" cancel-title="NOP" align="center" footer-bg-variant="secondary"
+      header-bg-variant="secondary">
       <b-card
         :title="selectedfilm && selectedfilm.title"
         tag="article"
@@ -124,7 +113,7 @@ export default {
 </script>
 <style scoped>
 .test{
-  background: url('/images/breaking-bad.png'); 
+  background: url('/images/breaking-bad.png');
   background-repeat: no-repeat;
     background-size: cover; /* Resize the background image to cover the entire container */
   background-position: center; /* Center the image */

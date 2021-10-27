@@ -18,7 +18,7 @@
         
 
 
-    <b-button @click="selectId()" variant="primary">{{ buttonTitle }}</b-button>
+    <b-button @click="selectId()" variant="secondary">{{ buttonTitle }}</b-button>
   </b-card>
 </template>
 
