@@ -88,7 +88,7 @@
               variant="primary"
               >Submit</b-button
             >
-            
+
             <b-button @click="onReset()" type="reset" variant="danger"
               >Reset</b-button
             >
@@ -103,7 +103,7 @@
           height="450"
           style="border: 0"
           allowfullscreen=""
-           
+
         ></iframe>
       </b-col>
     </b-row>
@@ -130,7 +130,7 @@ export default {
         message: null,
         checked: [],
       },
-      
+
     };
   },
    watch: {
@@ -140,7 +140,7 @@ export default {
       this.validateEmail(value);
     }
   },
-  
+
   methods: {
     async onSubmit() {
       alert(JSON.stringify(this.form));
@@ -152,7 +152,7 @@ export default {
       });
       
     },
-    
+
     onReset() {
       // Reset our form values
       this.form.email = "";
@@ -163,14 +163,14 @@ export default {
       // Trick to reset/clear native browser form validation state
     },
   },
-  
 };
+
 </script>
 
 <style>
 form {
    max-width: 500px;
-   margin: 0 auto; 
+   margin: 0 auto;
    text-align: left;
 }
 .form-group > label {

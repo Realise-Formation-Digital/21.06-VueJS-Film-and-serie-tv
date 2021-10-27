@@ -1,18 +1,17 @@
 <template>
   <b-card
     :title="ApiTitle"
-    :img-src="img"
     tag="article"
-    style="max-width: 20rem"
     class="mb-2"
   >
+    <b-card-img :src="img" height="350" class="card-img-top"/>
     <b-card-text v-if="description"> {{ description }}</b-card-text>
     <b-card-text v-if="season"> {{ season }} </b-card-text>
     <b-card-text v-if="episodes"> {{ episodes }} </b-card-text>
     <b-card-text v-if="name"> {{ name }} </b-card-text>
     <b-card-text v-if="nickname"> {{ nickname }} </b-card-text>
 
-    <b-button href="#" variant="primary">{{ buttonTitle }}</b-button>
+    <b-button @click="selectId()" variant="primary">{{ buttonTitle }}</b-button>
   </b-card>
 </template>
 
@@ -20,6 +19,10 @@
 export default {
   name: "ApiTest",
   props: {
+    id: {
+      type: Number,
+      required: false,
+    },
     ApiTitle: {
       type: String,
       required: false,
@@ -28,19 +31,17 @@ export default {
       type: String,
       required: false,
     },
-
     season: {
-      type: Number,
+      type: String,
       required: false,
     },
-
     buttonTitle: {
       type: String,
       default: "",
       required: true,
     },
     episodes: {
-      type: Number,
+      type: String,
       required: false,
     },
     name: {
@@ -56,8 +57,19 @@ export default {
       required: false,
     },
   },
+  methods: {
+      selectId() {
+        console.log("Clicked");
+        this.$emit("selectedId", this.id);
+      },
+    },
 };
 </script>
 
 <style scoped>
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
 </style>
