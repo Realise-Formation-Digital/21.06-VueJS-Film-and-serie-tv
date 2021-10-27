@@ -3,6 +3,8 @@
     :title="ApiTitle"
     tag="article"
     class="mb-2"
+    bg-variant="dark"
+    text-variant="white"
   >
     <b-card-img v-if="img"  :src="img" height="350" class="card-img-top"/>
     <b-card-text v-if="description"> {{ description }}</b-card-text>

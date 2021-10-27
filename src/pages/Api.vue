@@ -1,11 +1,35 @@
 <template>
   <div>
-    <h1>Breaking Bad</h1>
+    <b-card bg-variant="dark" text-variant="white" title="Card Title">
+      <div>
+        <b-container class="text-center"> <h1>Breaking Bad</h1> <br> <h5>“Say my name.”</h5></b-container>
+      </div>
+    </b-card>
     <div>
-      <b-container class="text-center"> </b-container>
+      <b-card bg-variant="dark" text text-variant="white" >
+        <b-card
+          class="text-center"
+          overlay
+          img-src="images/episode2.jpeg"
+          img-alt="Card Image"
+          text-variant="black"
+          title=" "
+          sub-title=""
+        >
+          <b-card
+            bg-variant="dark"
+            text-variant="white"
+            title="All About Episodes"
+          >
+            <b-card-text>
+              Watch all the additional information about your favorite series
+            </b-card-text>
+          </b-card>
+        </b-card>
+      </b-card>
     </div>
 
-    <b-container class="text-center bv-example-row">
+    <b-container class="text-center bv-example-row" bg-variant="dark">
       <b-row>
         <!-- Dependency Injection of single beer inside the card component -->
 
