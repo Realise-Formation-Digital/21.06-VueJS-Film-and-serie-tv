@@ -54,7 +54,7 @@
           label="Messages">
             <b-form-input
               type="text"
-              v-model="user.message"
+              v-model="user.messages"
               :state="errors[0] ? false : (valid ? true : null)"
               placeholder="Enter message no">
             </b-form-input>
