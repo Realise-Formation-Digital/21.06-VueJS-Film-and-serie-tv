@@ -18,7 +18,8 @@
           <b-icon icon="facebook" variant="white"></b-icon>
           <b-icon icon="linkedin" variant="white"></b-icon>
           <b-icon icon="discord" variant="white"></b-icon>
-          <b-icon icon="youtube" variant="white"></b-icon>
+          <b-iconnpm run serve
+          d icon="youtube" variant="white"></b-icon>
         </b-col>
         
       </b-row>
