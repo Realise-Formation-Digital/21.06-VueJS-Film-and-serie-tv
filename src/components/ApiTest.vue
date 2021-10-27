@@ -14,6 +14,7 @@
     <b-card-text v-if="nickname"> {{ nickname }} </b-card-text>
     <b-card-text v-if="air_date"> {{ air_date }} </b-card-text>
     <b-card-text v-if="characters"> {{ characters }} </b-card-text>
+    <b-card-text v-if="birthday"> {{ birthday }} </b-card-text>
         
 
 
@@ -67,6 +68,10 @@ export default {
       required: false,
     },
     characters: {
+      type: String,
+      required: false,
+    },
+    birthday: {
       type: String,
       required: false,
     },

@@ -46,7 +46,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-modal v-model="modalShow" body-bg-variant="black" cancel-title="NOPPPPP">
+    <b-modal v-model="modalShow" body-bg-variant="black" cancel-title="NOP" align="center">
       <b-card
         :title="selectedfilm && selectedfilm.title"
         tag="article"
