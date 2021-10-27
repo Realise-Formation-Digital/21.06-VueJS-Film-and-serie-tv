@@ -144,13 +144,17 @@
         </b-overlay>
       </b-container>
     </div>
-     <b-modal v-model="modalShow" body-bg-variant="black" cancel-title="NOP" align="center" >
+    <b-modal
+      v-model="modalShow"
+      body-bg-variant="black"
+      cancel-title="NOP"
+      align="center"
+    >
       <b-card
         :title="selectedActeur && selectedActeur.title"
         tag="article"
         style="max-width: 20rem"
         class="mb-2"
-        
       >
         <b-card-text>
           Name: {{ selectedActeur && selectedActeur.name }}
@@ -162,7 +166,6 @@
         <b-card-text>
           Birthday: {{ selectedActeur && selectedActeur.birthday }}
         </b-card-text>
-      
       </b-card>
     </b-modal>
   </div>
