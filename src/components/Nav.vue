@@ -16,7 +16,6 @@
       <b-nav-item>
         <router-link to="/api">api</router-link>
       </b-nav-item>
-
       <!-- Navbar dropdowns -->
 <!--      <b-nav-item-dropdown text="Lang" right>-->
 <!--        <b-dropdown-item href="#">EN</b-dropdown-item>-->
