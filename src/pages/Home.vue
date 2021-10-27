@@ -149,6 +149,9 @@
       body-bg-variant="black"
       cancel-title="NOP"
       align="center"
+      footer-bg-variant="secondary"
+      header-bg-variant="secondary"
+
     >
       <b-card
         :title="selectedActeur && selectedActeur.title"
