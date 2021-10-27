@@ -2,33 +2,48 @@
   <div>
     <h1>Breaking Bad</h1>
     <div>
-      <b-container class="text-center">
-        <!-- Butto that trigger the events that get the beer list-->
-        <b-btn @click="getApi()">All episodes </b-btn>
-      </b-container>
+      <b-container class="text-center"> </b-container>
     </div>
-    <!-- Loop over beers -->
 
     <b-container class="text-center bv-example-row">
       <b-row>
-        <div v-for="(api, index) in apis" :key="index">
-          <!-- Dependency Injection of single beer inside the card component -->
+        <!-- Dependency Injection of single beer inside the card component -->
 
-          <b-col cols="3" class="m-1">
-            <ApiTest
-              :ApiTitle="api.title"
-              :description="api.air_date"
-              :season="api.season"
-              :episodes="api.episode"
-              :buttonTitle="'More Information'"
-              :id="api.id"
-              @selectedId="handleSelectedId"
-            />
-          </b-col>
-        </div>
+        <b-col v-for="(api, index) in apis" :key="index" sm="12" md="4" lg="3">
+          <ApiTest
+            :ApiTitle="api.title"
+            :description="api.air_date"
+            :season="api.season"
+            :episodes="api.episode"
+            :buttonTitle="'More Information'"
+            :id="api.episode_id"
+            @selectedId="handleSelectedId"
+          />
+        </b-col>
       </b-row>
     </b-container>
-    <b-modal v-model="modalShow">{{selectedfilm}}</b-modal>
+    <b-modal v-model="modalShow" body-bg-variant="black" cancel-title="NOPPPPP">
+      <b-card
+        :title="selectedfilm && selectedfilm.title"
+        tag="article"
+        style="max-width: 20rem"
+        class="mb-2"
+      >
+        <b-card-text>
+          Episode: {{ selectedfilm && selectedfilm.episode }}
+        </b-card-text>
+
+        <b-card-text>
+          Season: {{ selectedfilm && selectedfilm.season }}
+        </b-card-text>
+        <b-card-text>
+          Date: {{ selectedfilm && selectedfilm.air_date }}
+        </b-card-text>
+        <b-card-text>
+          Characters: {{ selectedfilm && selectedfilm.characters }}
+        </b-card-text>
+      </b-card>
+    </b-modal>
   </div>
 </template>
 
@@ -46,6 +61,9 @@ export default {
       modalShow: false,
       selectedfilm: null,
     };
+  },
+  mounted() {
+    this.getApi();
   },
 
   methods: {
@@ -67,14 +85,13 @@ export default {
       this.apis = result.data;
     },
     handleSelectedId(id) {
+      console.log(id);
       this.selectedfilm = null;
-      this.selectedfilm = this.apis.find((api) => api.id === id);
+      this.selectedfilm = this.apis.find((api) => api.episode_id === id);
       this.modalShow = true;
     },
   },
 };
 </script>
-
- 
-<style>
+<style scoped>
 </style>
