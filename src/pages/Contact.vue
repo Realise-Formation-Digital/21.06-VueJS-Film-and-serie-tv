@@ -19,7 +19,7 @@
         </b-form-group>
       </ValidationProvider>
       <ValidationProvider rules="required|email" name="Email">
-        <b-form-group 
+        <b-form-group
           slot-scope="{ valid, errors }"
           label="Email">
             <b-form-input
@@ -34,7 +34,7 @@
         </b-form-group>
       </ValidationProvider>
       <ValidationProvider rules="required" name="Mobile">
-        <b-form-group 
+        <b-form-group
           slot-scope="{ valid, errors }"
           label="Mobile">
             <b-form-input
@@ -49,7 +49,7 @@
         </b-form-group>
       </ValidationProvider>
       <ValidationProvider rules="required" name="Message">
-        <b-form-group 
+        <b-form-group
           slot-scope="{ valid, errors }"
           label="Messages">
             <b-form-input
@@ -65,8 +65,8 @@
       </ValidationProvider>
       <ValidationProvider name="City" rules="required">
         <b-form-group slot-scope="{ valid, errors }" label="City:">
-          <b-form-select 
-            :state="errors[0] ? false : (valid ? true : null)" 
+          <b-form-select
+            :state="errors[0] ? false : (valid ? true : null)"
             v-model="user.city">
             <option value="">Choose</option>
             <option value="CA">Geneve</option>
@@ -99,10 +99,7 @@
 </template>
 
 <script>
-
-  
 import { ValidationObserver, ValidationProvider } from 'vee-validate';
-
 import axios from "axios";
 
 
@@ -119,31 +116,39 @@ export default {
         messages: '',
         mobile: '',
         city: '',
-        
+
     }
   }),
   methods: {
    async handleSubmit () {
      alert(JSON.stringify(this.user));
      await axios.post("http://localhost:3001/messages", {
-        name: this.user.name,
-        email: this.user.email,
-        mobile: this.user.mobile,
-        messages: this.user.messages,
-      });
-    console.log(this.user);
+       name: this.user.name,
+       email: this.user.email,
+       mobile: this.user.mobile,
+       messages: this.user.messages,
+     });
+     console.log(this.user);
+   },
+    onReset() {
+      // Reset our form values
+      this.form.email = "";
+      this.form.name = "";
+      this.form.message = null;
+      this.form.checked = [];
 
-    }
-  }
+      // Trick to reset/clear native browser form validation state
+    },
+  },
 };
-  
+
 </script>
 
 
 <style>
 form {
    max-width: 1000px;
-   margin: 0 auto; 
+   margin: 0 auto;
    text-align: left;
 }
 .form-group > label {

@@ -3,6 +3,8 @@
     :title="ApiTitle"
     tag="article"
     class="mb-2"
+    bg-variant="dark"
+    text-variant="white"
   >
     <b-card-img v-if="img"  :src="img" height="350" class="card-img-top"/>
     <b-card-text v-if="description"> {{ description }}</b-card-text>
@@ -12,10 +14,11 @@
     <b-card-text v-if="nickname"> {{ nickname }} </b-card-text>
     <b-card-text v-if="air_date"> {{ air_date }} </b-card-text>
     <b-card-text v-if="characters"> {{ characters }} </b-card-text>
+    <b-card-text v-if="birthday"> {{ birthday }} </b-card-text>
         
 
 
-    <b-button @click="selectId()" variant="primary">{{ buttonTitle }}</b-button>
+    <b-button @click="selectId()" variant="secondary">{{ buttonTitle }}</b-button>
   </b-card>
 </template>
 
@@ -65,6 +68,10 @@ export default {
       required: false,
     },
     characters: {
+      type: String,
+      required: false,
+    },
+    birthday: {
       type: String,
       required: false,
     },
